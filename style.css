@@ -1,0 +1,514 @@
+:root{
+    /* colors */
+    --bg-100:#04012c;
+    --bg-100-80:rgba(4, 1, 44, 0.8);  
+    --bg-200:#222a5b;
+    --bg-300:#751fe0;
+    --bg-400:#9b45ca;
+    --bg-400-10:#cca1e4;
+    --bg-500:#ffffff;
+    --bg-500-15:rgba(255,255,255,0.25);  
+    --bg-transparent:rgba(255,255,255,0);  
+/* fonts */
+     --ff-heading:"montserrat", sans-serif;
+     --ff-body:"ubuntu", sans-serif;
+
+ /* font-weight: */
+    --fw-light:200;
+    --fw-regular:400;
+    --fw-medium:600;
+    --fw-bold:800;
+    --fw-black:900;
+
+/* Font Size */
+    --fs-40:clamp(0.75rem, 0.55vw, 0.950rem);
+    --fs-50:clamp(0.950rem, 1.2vw, 1.455rem);
+    --fs-100:clamp(1rem, 1.5vw, 1.455rem);
+    --fs-150:clamp(1.05rem,1.8vw, 2.255rem);
+    --fs-200:clamp(1.5rem, 2.5vw, 4rem); 
+    --fs-300:clamp(1rem, 10vw, 2rem); 
+    --fs-500:clamp(1.75rem,6vw,6rem);
+
+
+}
+/* Genreral */
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    color:var(--dark-blue);
+}
+html,
+body{
+    height:100%;
+    width:100%;
+ 
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: var(--ff-heading);
+    font-weight: var(--fw-black);
+}
+h2{
+    font-size: var(--fs-300);
+}
+p{
+    font-size: var(--fs-50);
+    font-family: var(--ff-body);
+    font-weight: var(--fw-light);
+    line-height: 2.2rem;
+}
+/* --------Navigation-------- */
+
+ .fl-header{
+    position: fixed;
+    font-family:var(--ff-body);
+    width: 100%;
+    padding: 2vw;
+    z-index: 99;
+} 
+.header-row{
+    width: 100%;
+    max-width: 1366px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    justify-content: space-between;
+}
+.fl-scroll {
+    background-color: var(--bg-100-80);
+    backdrop-filter: blur(5px);
+}
+
+.fl-logo{
+    color: var(--bg-500);
+    font-weight: var(--fw-black);
+    font-size: var(--fs-200);
+}
+
+ .fl-header ul{
+    list-style: none;
+    display: flex;
+    position: relative;
+}
+
+.fl-header ul li{
+    padding: 0.1rem 1.4rem;
+    position: relative; 
+}
+
+.fl-header ul li a{
+    text-decoration: none;
+    font-size: var(--fs-50);
+    color: var(--bg-500);
+    transition: all 0.3s;
+}
+
+.fl-header ul li a:hover{
+    color: var(--bg-400-10);
+}
+
+.fl-dropdown{
+    display:none;
+    position: absolute; 
+    top: 100%;
+    left: 0; 
+    background: var(--bg-100-80);
+    border: 1px solid var(--bg-400);
+    backdrop-filter: blur(5px);
+    z-index: 1000; 
+}
+
+.fl-header ul li:hover .fl-dropdown,
+.fl-dropdown:hover{
+    display: block;
+}
+
+.fl-dropdown ul{
+    display: block;
+    margin: 10px;
+}
+
+.fl-dropdown ul li{
+    width: 200px;
+    padding: 1vh;
+}
+
+.fa-caret-down{
+    position: relative;
+    padding-left: 0.5rem;
+} 
+
+.fl-button{
+    background-image: linear-gradient(0deg, var(--bg-300), var(--bg-400));
+    font-size: var(--fs-50);
+    font-family: var(--ff-body);
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: var(--bg-500);
+    display: flex;
+    align-items: center;
+    padding: 0.8vw 1.4vw;
+    border-radius: 50px;
+    transition: background-image 0.3s ease, transform 0.3s ease, color 0.3s ease;
+} 
+.fl-button:hover{
+    background-image: linear-gradient(0deg, var(--bg-400), var(--bg-300));
+    transform: scale(1.1);
+    transition: all ease 0.3s;
+
+}
+.fl-button svg{
+    height: 0.8vw;
+    margin-left: 1.2vw;
+}
+
+/* --------Homepage-------- */
+
+/* - Banner - */
+
+#particles-js{
+
+    width:100%;
+    background:var(--bg-100);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25vw; 
+    height: 100vh;
+}
+.fl-container{
+    z-index: 1;
+    position: absolute;
+    top: 25%;
+}
+
+/* banner heading stlyes */
+
+.fl-banner-heading{
+    font-size: var(--fs-500);
+    line-height:clamp(2.25rem,6vw,6rem);
+    font-weight: var(--fw-black);
+    color:var(--bg-500);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.fl-container h1 svg{
+    height:clamp(1.3rem, 4.4vw, 4.4rem);
+    width: clamp(1.3rem, 4.4vw, 4.4rem);
+    background-image: linear-gradient(0deg, var(--bg-300), var(--bg-400));
+    border-radius: 50%;
+    padding: clamp(0.1rem,1vw,1.2rem);
+    transition: all ease 0.3s;
+}
+.fl-container h1 svg:hover{
+    transform:rotate3d(0, 0, 1, -30deg) scale(0.9);
+
+}
+
+.fl-breakpoint{
+    display:block;
+}
+
+.fl-legal-glow {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2), 0 0 16px rgba(255, 255, 255, 0.2), 0 0 24px rgba(255, 255, 255, 0.2);
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.2), 0 0 16px rgba(255, 255, 255, 0.2), 0 0 24px rgba(255, 255, 255, 0.2);
+    }
+    to {
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.5), 0 0 16px rgba(255, 255, 255, 0.5), 0 0 24px rgba(255, 255, 255, 0.5);
+    }
+}
+.fl-banner-body{
+    padding: 5.5vh 0 5.5vh 0;
+    font-family:var(--ff-body);
+    font-size: var(--fs-150);
+    color:var(--bg-500);
+    font-weight: var(--fw-regular);
+    line-height: clamp(1.4rem,3vw,3.2rem);
+    text-align: center;
+}
+
+.fl-body-breakpoint, .fl-highlights{
+    display:block;
+}
+.fl-highlights{
+    margin: 3.5vh 0 3.5vh 0;
+    font-size: var(--fs-50);
+}
+.fl-highlights span{
+    border:1px solid var(--bg-400);
+    font-size: var(--fs-50);
+    background-color: var(--bg-100);
+    border-radius: 50px;
+    font-weight: 600;
+    padding: 0.6vw;
+    margin: 0 0.6vw 0 0.6vw ;
+    white-space: nowrap;
+    /* box-shadow: 0 0 6px rgba(155, 69, 202, 0.5), 0 0 12px rgba(155, 69, 202, 0.4), 0 0 18px rgba(155, 69, 202, 0.3);
+    animation: glow-pulse 1.5s infinite; */
+   
+}
+/* @keyframes glow-pulse {
+    0%, 100% {
+        box-shadow: 0 0 6px rgba(155, 69, 202, 0.5), 0 0 12px rgba(155, 69, 202, 0.4), 0 0 18px rgba(155, 69, 202, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 12px rgba(155, 69, 202, 0.7), 0 0 24px rgba(155, 69, 202, 0.6), 0 0 36px rgba(155, 69, 202, 0.5);
+    }
+} */
+/* @media only screen and (max-width: 1024px){
+    .fl-highlights span{
+        display: block;
+        margin: 1vh auto;
+        padding: 1vh 1.2vh;
+        width:fit-content;}
+} */
+
+.particles-js-canvas-el{
+    position: absolute;
+}
+
+
+.carousle-container{
+    padding: 1vw 0 1vw 0;
+    position: absolute;
+    bottom: 1%;
+    width: 51%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.carousle-container .fl-main-carousel{
+display: inline-block;
+animation-name: carousel;
+animation-duration: 15s;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+}
+.carousle-container .fl-main-carousel img{
+    margin:0 2vw;
+    }
+
+
+@keyframes carousel{
+0%{
+    transform: translateX(0%);
+}
+100%{
+    transform: translateX(-100%);
+}
+}
+.fl-blur-left{
+    height: 100%;
+    width: 20%;
+    background:linear-gradient(to left,transparent,var(--bg-100));
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+}
+
+.fl-blur-right{
+    height: 100%;
+    width: 20%;
+    background:linear-gradient(to right,transparent,var(--bg-100));
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+
+}
+
+
+#section2{
+    width:100%;
+    position: relative;
+    background: var(--bg-100);
+    padding-bottom: 8vw;
+}
+.practice-row{
+    height: 100%;
+    width: 90%;
+    max-width: 1366px;
+    margin-block: min(10vh, 7rem);
+    margin-inline: 0;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--bg-500-15);
+    padding-top: 7vw;
+}
+
+.practice-column-left{
+    position: sticky;
+    top: 100px;
+    height: 100%;
+    width: 40%;
+    background: var(--bg-transparent);
+    padding-block: min(3vh,5rem);
+    padding-bottom: 4rem;
+    padding-inline:0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+
+}
+.practice-column-left h2{
+    color:var(--bg-500);
+}
+.practice-column-right{
+    height: 100%;
+    width: 55%;
+    background: var(--bg-transparent);
+    padding-inline:0;
+}
+.practice-column-left p{
+    width: clamp(65%, 85%, 100%);
+    padding-top: 20vw;
+}
+.practice-column-left p, .practice-column-right p,  .practice-column-right h3{
+   color: var(--bg-500);
+}
+.practice-column-right p{
+    font-size: 0.94rem;
+}
+.practice-column-right h3{
+    font-size: var(--fs-150);
+    padding-bottom: 1rem;
+    font-weight: var(--fw-medium);
+}
+.right-elem{
+    position: relative;
+    padding-block: min(2vw,5rem);
+    padding-bottom: 5vw;
+    border-bottom: 1px solid var(--bg-500-15);
+    transition: all ease 0.3s;
+}
+.right-elem:hover{
+    border-bottom: 1px solid var(--bg-500);
+}
+.right-elem img {
+    height: 7vw;
+    width: 7vw;
+    border-radius: 50%;
+    object-fit: cover;
+    opacity: 0;
+    scale: 0;
+    position: absolute;
+    z-index: 1; /* Ensure the image is behind the text */
+}
+
+.right-elem h3,
+.right-elem p {
+    position: relative;
+    z-index: 2; /* Ensure the text is in front of the image */
+}
+
+
+
+
+
+#book{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-500);
+    overflow: hidden;
+}
+
+#book h1{
+    font-size: 92px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--bg-100);
+}
+
+.fl-top{
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 50vh;
+    background-color:var(--bg-500);
+    z-index: 9;
+    overflow: hidden;
+}
+
+.fl-center{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    transform-origin: center;
+    background-color: var(--bg-100);
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)1s;
+    overflow: hidden;
+}
+
+.fl-bottom{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50vh;
+    background-color: var(--bg-500);
+    overflow: hidden;
+}
+
+
+.fl-top-h1{
+    bottom: 50%;
+    line-height:22.54rem;
+    ;
+}
+
+.fl-bottom-h1{
+    top: 2% !important;
+}
+
+.content{
+    margin-top: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    color: var(--bg-500);
+    gap: 4vh;
+}
+
+.content h4{
+    font-size: 1vw;
+}
+
+.content h3{
+    width: 60%;
+    font-size: 6vw;
+    text-align: center;
+    font-weight: var(--fw-black);
+}
+
+.content .btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 7vw;
+    height: 2vw;
+    border-radius: 50px;
+    background-color: #fff;
+    color: #0d0d0d;
+   
+}
+
+.content h2{
+    font-size: 20vw;
+
+}
